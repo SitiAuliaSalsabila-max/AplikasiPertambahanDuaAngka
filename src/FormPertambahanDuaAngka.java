@@ -3,10 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-/**
- *
- * @author lenovo
- */
+import javax.swing.JOptionPane;
+import java.awt.event.KeyEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.FocusAdapter;
 public class FormPertambahanDuaAngka extends javax.swing.JFrame {
 
     /**
@@ -14,8 +14,22 @@ public class FormPertambahanDuaAngka extends javax.swing.JFrame {
      */
     public FormPertambahanDuaAngka() {
         initComponents();
+        // Implementasi FocusListener
+        bersihkanSaatFokus(txtAngka1);
+        bersihkanSaatFokus(txtAngka2);
     }
-
+     
+    // ==========================
+    // METHOD TAMBAHAN (DIPERLUKAN)
+    // ==========================
+    private void bersihkanSaatFokus(javax.swing.JTextField textField) {
+        textField.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textField.setText("");
+            }
+        });
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -25,21 +39,212 @@ public class FormPertambahanDuaAngka extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panel1 = new java.awt.Panel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtAngka1 = new javax.swing.JTextField();
+        txtAngka2 = new javax.swing.JTextField();
+        txtHasil = new javax.swing.JTextField();
+        btnTambah = new javax.swing.JButton();
+        btnHapus = new javax.swing.JButton();
+        btnKeluar = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Aplikasi Pertambahan Dua Angka");
+
+        jLabel2.setText("Angka 1");
+
+        jLabel3.setText("Angka 2");
+
+        jLabel4.setText("Hasil");
+
+        txtAngka1.setText("txtAngka1");
+        txtAngka1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAngka1KeyTyped(evt);
+            }
+        });
+
+        txtAngka2.setText("txtAngka2");
+        txtAngka2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAngka2KeyTyped(evt);
+            }
+        });
+
+        txtHasil.setText("txtHasil");
+        txtHasil.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtHasilFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtHasilFocusLost(evt);
+            }
+        });
+
+        btnTambah.setText("btnTambah");
+        btnTambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTambahActionPerformed(evt);
+            }
+        });
+
+        btnHapus.setText("btnHapus");
+        btnHapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHapusActionPerformed(evt);
+            }
+        });
+
+        btnKeluar.setText("btnKeluar");
+        btnKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKeluarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
+        panel1.setLayout(panel1Layout);
+        panel1Layout.setHorizontalGroup(
+            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnTambah, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panel1Layout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtHasil)
+                                    .addComponent(txtAngka2, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                                    .addComponent(txtAngka1)))
+                            .addGroup(panel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(102, Short.MAX_VALUE))
+        );
+        panel1Layout.setVerticalGroup(
+            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtAngka1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(txtAngka2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtHasil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)))
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel3)))
+                .addGap(32, 32, 32)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnTambah)
+                    .addComponent(btnHapus)
+                    .addComponent(btnKeluar))
+                .addContainerGap(301, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtAngka1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAngka1KeyTyped
+         char c = evt.getKeyChar();
+    if (!Character.isDigit(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
+        evt.consume();
+        JOptionPane.showMessageDialog(this, 
+            "Input harus berupa angka!", 
+            "Error Input", 
+            JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_txtAngka1KeyTyped
+
+    private void txtAngka2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAngka2KeyTyped
+       char c = evt.getKeyChar();
+    if (!Character.isDigit(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
+        evt.consume();
+        JOptionPane.showMessageDialog(this, 
+            "Input harus berupa angka!", 
+            "Error Input", 
+            JOptionPane.ERROR_MESSAGE);
+       }
+    }//GEN-LAST:event_txtAngka2KeyTyped
+
+    private void txtHasilFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtHasilFocusLost
+        
+    }//GEN-LAST:event_txtHasilFocusLost
+
+    private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
+      try { 
+            double angka1 = Double.parseDouble(txtAngka1.getText()); 
+            double angka2 = Double.parseDouble(txtAngka2.getText()); 
+            double hasil = angka1 + angka2; 
+            txtHasil.setText(String.valueOf(hasil)); 
+        } catch (NumberFormatException e) { 
+            JOptionPane.showMessageDialog(this, "Masukkan angka yang valid!", 
+            "Error", JOptionPane.ERROR_MESSAGE); 
+        }
+    }//GEN-LAST:event_btnTambahActionPerformed
+
+    private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
+       // Hapus semua TextField
+       txtAngka1.setText("");
+       txtAngka2.setText("");
+       txtHasil.setText("");
+    
+       // Fokus ke TextField pertama
+       txtAngka1.requestFocus();
+    }//GEN-LAST:event_btnHapusActionPerformed
+
+    private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeluarActionPerformed
+        // Konfirmasi sebelum keluar
+        int confirm = JOptionPane.showConfirmDialog(this, 
+            "Apakah Anda yakin ingin keluar?", 
+            "Konfirmasi Keluar", 
+            JOptionPane.YES_NO_OPTION);
+    
+        if (confirm == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_btnKeluarActionPerformed
+
+    private void txtHasilFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtHasilFocusGained
+        txtHasil.setText("");
+    }//GEN-LAST:event_txtHasilFocusGained
 
     /**
      * @param args the command line arguments
@@ -77,5 +282,16 @@ public class FormPertambahanDuaAngka extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnHapus;
+    private javax.swing.JButton btnKeluar;
+    private javax.swing.JButton btnTambah;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private java.awt.Panel panel1;
+    private javax.swing.JTextField txtAngka1;
+    private javax.swing.JTextField txtAngka2;
+    private javax.swing.JTextField txtHasil;
     // End of variables declaration//GEN-END:variables
 }
